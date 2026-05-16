@@ -55,11 +55,18 @@ Configure:
 •	AMI: Ubuntu Server 22.04 LTS (Free Tier eligible) 
 •	Instance type: t2.micro (Free tier) 
 •	Key pair: 
-o	Create new key pair → download .pem file 
+o	Create new key pair → download .pem file
+
 Network settings:
 •	Allow: 
 o	✅ SSH (port 22) 
+
 o	✅ HTTP (port 80) 
-3.	Click Launch Instance 
+
+4.	Click Launch Instance 
 
 ![image](https://github.com/jcmf-9/My-first-project/blob/718025efdfdf9aa7b2dccf05a4b1fe7847f54ab8/EC2%20scr.png)
+
+🔐 STEP 3: Connect to Your Server (Open Window CMD)
+
+![image]
