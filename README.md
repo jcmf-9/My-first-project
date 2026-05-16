@@ -38,3 +38,28 @@ Add HTTPS with SSL certificates
 Purpose
 
 This project is designed for beginners who want hands-on experience with cloud deployment, Docker containers, and basic web hosting using AWS.
+
+
+Here are the steps:
+
+🧱 STEP 1: Create AWS Free Tier Account
+1.	Go to: https://aws.amazon.com/free/ 
+2.	Sign up and verify your account 
+3.	Enable Free Tier EC2 access 
+________________________________________
+🖥️ STEP 2: Launch an EC2 Instance (Server)
+1.	Open AWS Console → EC2 
+2.	Click Launch Instance 
+Configure:
+•	Name: my-web-server 
+•	AMI: Ubuntu Server 22.04 LTS (Free Tier eligible) 
+•	Instance type: t2.micro (Free tier) 
+•	Key pair: 
+o	Create new key pair → download .pem file 
+Network settings:
+•	Allow: 
+o	✅ SSH (port 22) 
+o	✅ HTTP (port 80) 
+3.	Click Launch Instance 
+
+![App Screenshot](EC2 scr.png)
