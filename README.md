@@ -43,22 +43,35 @@ This project is designed for beginners who want hands-on experience with cloud d
 Here are the steps:
 
 🧱 STEP 1: Create AWS Free Tier Account
+
 1.	Go to: https://aws.amazon.com/free/ 
+
 2.	Sign up and verify your account 
+
 3.	Enable Free Tier EC2 access 
 ________________________________________
+
 🖥️ STEP 2: Launch an EC2 Instance (Server)
+
 1.	Open AWS Console → EC2 
-2.	Click Launch Instance 
+
+2.	Click Launch Instance
+    
 Configure:
+
 •	Name: my-web-server 
+
 •	AMI: Ubuntu Server 22.04 LTS (Free Tier eligible) 
-•	Instance type: t2.micro (Free tier) 
+
+•	Instance type: t3.micro (Free tier) 
 •	Key pair: 
+
 o	Create new key pair → download .pem file
 
 Network settings:
-•	Allow: 
+
+•	Allow:
+
 o	✅ SSH (port 22) 
 
 o	✅ HTTP (port 80) 
@@ -70,3 +83,136 @@ o	✅ HTTP (port 80)
 🔐 STEP 3: Connect to Your Server (Open Window CMD)
 
 ![image](https://github.com/jcmf-9/My-first-project/blob/0d230ce42fef9a9f97b84ddd4c54154233a016df/scr2.png)
+
+![image](https://github.com/jcmf-9/My-first-project/blob/18b7054d241e694a04853cd2d37409534a6977c7/scr3.png)
+
+Find IP in EC2 dashboard.
+
+✅ Connect to EC2
+
+Step 1 — Update system
+
+sudo yum update -y
+________________________________________
+Step 2 — Install Docker
+
+sudo yum install docker -y
+________________________________________
+
+Step 3 — Start Docker
+
+sudo systemctl start docker
+________________________________________
+
+Step 4 — Enable Docker on boot
+
+sudo systemctl enable docker
+________________________________________
+Step 5 — (IMPORTANT) allow ec2-user to use docker
+
+sudo usermod -aG docker ec2-user
+
+Then log out and log back in:
+
+exit
+
+Reconnect via SSH.
+________________________________________
+Step 6 — Test Docker
+
+docker --version
+
+docker run hello-world
+________________________________________
+
+🌐 STEP 5: Create Your Simple Web Page
+Create folder:
+mkdir mywebsite && cd mywebsite
+Create HTML file:
+nano index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Professional Website</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #4f46e5, #06b6d4);
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.3);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 500px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: white;
+      color: black;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>🚀 Welcome</h1>
+    <p>Deployed using AWS EC2 + Docker on Linux</p>
+    <a class="btn" href="#">Get Started</a>
+  </div>
+</body>
+</html>
+
+🐳 STEP 6: Create Docker Web Server
+Create Dockerfile:
+nano Dockerfile
+Paste:
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+________________________________________
+🔨 STEP 7: Build Docker Image
+docker build -t my-webpage .
+________________________________________
+▶️ STEP 8: Run the Container
+docker run -d -p 80:80 my-webpage
+________________________________________
+🌍 STEP 9: Open Your Website
+In browser:
+http://YOUR_PUBLIC_IP
+You should see your webpage 🎉
+________________________________________
+
+![image]
+
+
