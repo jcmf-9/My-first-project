@@ -62,4 +62,4 @@ o	✅ SSH (port 22)
 o	✅ HTTP (port 80) 
 3.	Click Launch Instance 
 
-![App Screenshot](EC2 scr.png)
+![image] (https://github.com/jcmf-9/My-first-project/blob/718025efdfdf9aa7b2dccf05a4b1fe7847f54ab8/EC2%20scr.png)
