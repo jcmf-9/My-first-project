@@ -126,93 +126,45 @@ docker run hello-world
 ________________________________________
 
 🌐 STEP 5: Create Your Simple Web Page
+
 Create folder:
+
 mkdir mywebsite && cd mywebsite
+
 Create HTML file:
+
 nano index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Professional Website</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #4f46e5, #06b6d4);
-      color: white;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+copy and paste the code in the file below
 
-    .card {
-      background: rgba(0,0,0,0.3);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      max-width: 500px;
-    }
-
-    h1 {
-      margin-bottom: 10px;
-      font-size: 2.5rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 10px 20px;
-      background: white;
-      color: black;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: #ddd;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="card">
-    <h1>🚀 Welcome</h1>
-    <p>Deployed using AWS EC2 + Docker on Linux</p>
-    <a class="btn" href="#">Get Started</a>
-  </div>
-</body>
-</html>
 
 🐳 STEP 6: Create Docker Web Server
+
 Create Dockerfile:
+
 nano Dockerfile
-Paste:
-FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/index.html
+
+copy and paste the code in the file below
+
+
 ________________________________________
 🔨 STEP 7: Build Docker Image
+
 docker build -t my-webpage .
 ________________________________________
 ▶️ STEP 8: Run the Container
+
 docker run -d -p 80:80 my-webpage
 ________________________________________
 🌍 STEP 9: Open Your Website
+
 In browser:
+
 http://YOUR_PUBLIC_IP
+
 You should see your webpage 🎉
 ________________________________________
 
-![image]
+![image](https://github.com/jcmf-9/My-first-project/blob/a4e1cbb40f28da50041a21dd259f27f8c991c88a/output.png)
 
 
