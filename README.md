@@ -61,7 +61,7 @@ Configure:
 
 •	Name: my-web-server 
 
-•	AMI: Ubuntu Server 22.04 LTS (Free Tier eligible) 
+•	AMI: Amazon Linux 2023 (kernel-6.1) 
 
 •	Instance type: t3.micro (Free tier) 
 •	Key pair: 
@@ -137,7 +137,7 @@ nano index.html
 
 copy and paste the code in the file below
 
-[Download Here]
+[Download Here](https://github.com/jcmf-9/My-first-project/blob/e0cab187013d93b765ae75ef717a8a7b0ccec6fa/index.html)
 
 
 🐳 STEP 6: Create Docker Web Server
