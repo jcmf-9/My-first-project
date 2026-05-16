@@ -69,4 +69,4 @@ o	✅ HTTP (port 80)
 
 🔐 STEP 3: Connect to Your Server (Open Window CMD)
 
-![image]
+![image](https://github.com/jcmf-9/My-first-project/blob/0d230ce42fef9a9f97b84ddd4c54154233a016df/scr2.png)
